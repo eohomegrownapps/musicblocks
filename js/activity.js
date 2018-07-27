@@ -953,7 +953,7 @@ define(MYDEFINES, function (compatibility) {
 
             createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
             createjs.Ticker.setFPS(30);
-            createjs.Ticker.addEventListener('tick', stage);
+            //createjs.Ticker.addEventListener('tick', stage);
             createjs.Ticker.addEventListener('tick', __tick);
 
             _createMsgContainer('#ffffff', '#7a7a7a', function (text) {
