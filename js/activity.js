@@ -3954,20 +3954,26 @@ handleComplete);
             }
 
             text.visible = false;
-
+            var circles;
             container.on('mouseover', function (event) {
                 for (var c = 0; c < container.children.length; c++) {
                     if (container.children[c].text != undefined) {
                         container.children[c].visible = true;
+                        stage.update();
                         break;
                     }
                 }
+                var r = size / 2;
+                circles = showButtonHighlight(container.x, container.y, r, event, palettes.scale, stage);
+
             });
 
             container.on('mouseout', function (event) {
+                hideButtonHighlight(circles, stage);
                 for (var c = 0; c < container.children.length; c++) {
                     if (container.children[c].text != undefined) {
                         container.children[c].visible = false;
+                        stage.update();
                         break;
                     }
                 }
